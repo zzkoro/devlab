@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title></title>
+
+
+</head>
+<body>
+
+<input type="file" id="fileList" name="filesList" multiple="" style="font-family: sans-serif; color: rgb(229, 55, 39); margin: 0px; vertical-align: baseline;" />
+<div draggable="true" id="dropZone" style="border: 2px dashed rgb(187, 187, 187); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 25px; text-align: center; font-size: 20pt; line-height: normal; font-family: bold, Vollkorn; color: rgb(187, 187, 187);">Drop files here</div>
+<output id="list"></output>
+<script>
+    function handleFileSelect(evt) {
+
+        var files = evt.target.files;
+        var output = [];
+
+        for (var i = 0, f; f = files[i]; i++) {
+        output.push(
+                    '<li>',
+                    '<strong>',
+                        f.name,
+                    '</strong> (',
+                        f.type || 'n/a',
+                    ') - ',
+                    f.size,
+                    ' bytes, last modified: ',
+                    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                    '</li>');
+        }
+        document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    }
+
+    function handleFileDrop(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        var files = evt.dataTransfer.files;
+
+        var output = [];
+
+        for (var i = 0, f; f = files[i]; i++) {
+            output.push(
+                    '<li>',
+                    '<strong>',
+                    f.name,
+                    '</strong> (',
+                            f.type || 'n/a',
+                    ') - ',
+                    f.size,
+                    ' bytes, last modified: ',
+                    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                    '</li>');
+        }
+        document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+
+        console.log("drop");
+
+    }
+
+    function handleDragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.dataTransfer.dropEffect = 'copy';
+
+        console.log("drag over");
+    }
+
+
+    function handleDragEnter(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.dataTransfer.dropEffect = 'copy';
+
+        console.log("drag enter");
+    }
+    function handleDragStart(evt) {
+       // evt.stopPropagation();
+       // evt.preventDefault()
+
+
+//        var canvas = document.createElementNS("http://www.w3.org/1999/xhtml","canvas");
+//        canvas.width = canvas.height = 50;
+//
+//        var ctx = canvas.getContext("2d");
+//        ctx.lineWidth = 4;
+//        ctx.moveTo(0, 0);
+//        ctx.lineTo(50, 50);
+//        ctx.moveTo(0, 50);
+//        ctx.lineTo(50, 0);
+//        ctx.stroke();
+
+//        evt.dataTransfer.setDragImage(canvas, 25, 25);
+
+        evt.dataTransfer.setData('text/plain', 'This text may be dragged');
+
+        console.log("drag start");
+    }
+
+    document.getElementById('fileList').addEventListener('change', handleFileSelect, false);
+
+    var dropZone = document.getElementById('dropZone');
+    dropZone.addEventListener('dragstart', handleDragStart, false);
+    dropZone.addEventListener('dragover', handleDragOver, false);
+    dropZone.addEventListener('dragenter', handleDragEnter, false);
+    dropZone.addEventListener('drop', handleFileDrop, false);
+
+
+</script>
+
+
+</body>
+</html>
