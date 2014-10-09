@@ -3,15 +3,52 @@
 <head lang="ko">
     <meta charset="UTF-8">
     <title></title>
-
+    <style>
+        .thumb {
+            height: 75px;
+            border: 1px solid #000;
+            margin: 10px 5px 0 0;
+        }
+    </style>
 
 </head>
 <body>
 
+
 <input type="file" id="fileList" name="filesList" multiple="" style="font-family: sans-serif; color: rgb(229, 55, 39); margin: 0px; vertical-align: baseline;" />
 <div draggable="true" id="dropZone" style="border: 2px dashed rgb(187, 187, 187); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 25px; text-align: center; font-size: 20pt; line-height: normal; font-family: bold, Vollkorn; color: rgb(187, 187, 187);">Drop files here</div>
 <output id="list"></output>
+
+
 <script>
+
+    function handleFileSelect2(evt) {
+
+        var files = evt.target.files;
+
+        for (var i = 0, f; f = files[i]; i++) {
+
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            reader.onload = (function(theFile) {
+                return function(e) {
+                    var span = document.createElement('span');
+                    span.innerHTML = ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
+                    document.getElementById('list').insertBefore(span, null);
+                };
+            })(f);
+
+            reader.readAsDataURL(f);
+
+
+        }
+
+    }
+
     function handleFileSelect(evt) {
 
         var files = evt.target.files;
@@ -99,7 +136,7 @@
         console.log("drag start");
     }
 
-    document.getElementById('fileList').addEventListener('change', handleFileSelect, false);
+    document.getElementById('fileList').addEventListener('change', handleFileSelect2, false);
 
     var dropZone = document.getElementById('dropZone');
     dropZone.addEventListener('dragstart', handleDragStart, false);
