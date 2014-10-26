@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,8 +9,14 @@ var bodyParser = require('body-parser');
 var mainRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var dashboardRouter = require('./routes/dashboard');
 
 var app = express();
+
+// Configuration
+require('./config')(app);
+var config = app.get('config');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,9 +30,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session use
+app.use(session({
+    secret: config.session.secret,
+    store: app.get('sessionStore'),
+    cookie: {
+        maxAge: config.session.age || null //milli seconds
+    }
+}));
+
+
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
+app.use('/dashboard', dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

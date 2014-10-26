@@ -11,6 +11,8 @@
 
     <link rel='stylesheet' href='/css/style.css' />
 
+    <link rel='stylesheet' href='/css/dashboard.css' />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,6 +23,132 @@
 
   </head>
   <body>
+
+
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+          <li>
+              <a href="/" class="nav-section first dashboard current">
+                  <span class="ss-desktop icon"></span>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/integrations" class="nav-section integrations">
+                  <span class="ss-lock icon"></span>
+                  <span>Integrations</span>
+                  <span class="count">3</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/users" class="nav-section users">
+                  <span class="ss-user icon"></span>
+                  <span>Users</span>
+                  <span class="count">0</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/phones" class="nav-section devices">
+                  <span class="ss-phone icon"></span>
+                  <span>Devices</span>
+                  <span class="count">0</span>
+              </a>
+          </li>
+
+
+          <li>
+              <a href="/groups" class="nav-section groups">
+                  <span class="ss-users icon"></span>
+                  <span>Groups</span>
+                  <span class="count">0</span>
+              </a>
+          </li>
+
+
+          <li>
+              <a href="/admins" class="nav-section administrators">
+                  <span class="ss-briefcase icon"></span>
+                  <span>Administrators</span>
+                  <span class="count">1</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/logs" class="nav-section logs">
+                  <span class="ss-notebook icon"></span>
+                  <span>Logs</span>
+              </a>
+          </li>
+
+          <li>
+          <a href="/settings" class="nav-section settings ">
+                  <span class="ss-settings icon"></span>
+                  <span>Settings</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/billing" class="nav-section billing last">
+                  <span class="ss-creditcard icon"></span>
+                  <span>Billing</span>
+              </a>
+          </li>
+
+      </ul>
+      <ul class="nav nav-sidebar">
+          <h4>Documentation</h4>
+          <ul>
+              <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/getting_started" target="_blank">Getting Started</a></li>
+              <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/administration" target="_blank">Administration</a></li>
+
+              <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/telephony_credits" target="_blank">Telephony Credits</a></li>
+
+          </ul>
+      </ul>
+
+      <ul class="nav nav-sidebar">
+          <h4>For Users</h4>
+          <p><a href="http://guide.duosecurity.com" target="_blank">Duo User Guide</a></p>
+      </ul>
+
+      <ul class="nav nav-sidebar">
+          <h4>Support</h4>s
+
+
+          <p>Get help via <a href="mailto:support&#x40;duosecurity.com">email</a> or phone (1-855-386-2884).</p>
+
+
+      </ul>
+
+      <ul class="nav nav-sidebar">
+          <h4>Feedback?</h4>
+          <p class="pre-feedback"><a href="#" class="show_feedback">Let us know</a> how we can make this page better.</p>
+          <form action="/feedback" name="feedback" id="feedback">
+              <input type="hidden" name="_xsrf" value="c994937228b0452891c6453e3be1b906"/>
+              <input type="hidden" name="email" value="junemp&#x40;gmail.com">
+              <input type="hidden" name="page" value="admin-953b8d24.duosecurity.com&#x2f;">
+              <input type="hidden" name="customer" value="Koro">
+              <textarea class="text" name="feedback_message"></textarea>
+<span class="do-button has-input save-changes">
+<input type="submit" name="submit" value="Submit">
+</span>
+          </form>
+          <p class="feedback-thanks">Thanks. We love feedback!</p>
+      </ul>
+
+
+
+
+
+  </div> <!-- .sidebar -->
+
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
   <div id="contactbar">
       <div class="content-width">
           <div class="grid_12">
@@ -41,21 +169,24 @@
           </div>
       </div> <!-- content-width -->
   </div>
+
   <div id="header">
       <div class="content-width">
           <div id="logo">
               <h1>
                   <a href="/">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                           width="101.7px" height="32.8px" viewBox="0 0 101.7 32.8" enable-background="new 0 0 101.7 32.8" xml:space="preserve">
-<path class="logo-path" d="M50.8,11C50.8,11,50.8,11,50.8,11L50.8,11C50.8,11,50.8,11,50.8,11z"/>
+                           width="101.7px" height="32.8px" viewBox="0 0 101.7 32.8"
+                           enable-background="new 0 0 101.7 32.8" xml:space="preserve">
+        <path class="logo-path" d="M50.8,11C50.8,11,50.8,11,50.8,11L50.8,11C50.8,11,50.8,11,50.8,11z"/>
                           <path class="logo-path logo-opaque" d="M0,32.8h16.4c8.8,0,16-6.9,16.4-15.6H0V32.8z"/>
                           <path class="logo-path" d="M16.4,0H0v15.6h32.8C32.4,6.9,25.2,0,16.4,0z"/>
                           <path class="logo-path" d="M85.3,0c-8.8,0-16,6.9-16.4,15.6h32.8C101.3,6.9,94.1,0,85.3,0z"/>
-                          <path class="logo-path logo-opaque" d="M85.3,32.8c8.8,0,16-6.9,16.4-15.6H68.9C69.4,25.9,76.5,32.8,85.3,32.8z"/>
+                          <path class="logo-path logo-opaque"
+                                d="M85.3,32.8c8.8,0,16-6.9,16.4-15.6H68.9C69.4,25.9,76.5,32.8,85.3,32.8z"/>
                           <path class="logo-path" d="M34.5,0v16.4c0,8.8,6.9,16,15.6,16.4V0H34.5z"/>
                           <polygon class="logo-path logo-opaque" points="51.7,0 51.7,32.8 67.3,32.8 67.3,16.4 67.3,0 "/>
-</svg>
+        </svg>
                       <span>Duo</span>
                   </a>
               </h1>
@@ -66,7 +197,7 @@
 
 
           <div id="customer-name">
-              <h2 class="ss-navigateright"><a href="/">Koro</a></h2>
+              <h2 class="ss-navigateright"><a href="/"><%= email %></a></h2>
           </div>
           <div class="wonka-bar">
               <input type="text" placeholder="Search for users, integrations, or devices">
@@ -80,123 +211,8 @@
       </div> <!-- .content-width -->
   </div> <!-- #header -->
 
-  <div id="wrapper">
-  <div id="content" class="content-width">
-  <div id="sidebar">
-      <div class="inner">
-          <a href="/" class="nav-section first dashboard current">
-              <span class="ss-desktop icon"></span>
-              <span class="main">Dashboard</span>
-          </a>
 
-
-
-
-
-
-
-          <a href="/integrations" class="nav-section integrations">
-              <span class="ss-lock icon"></span>
-              <span class="main">Integrations</span>
-              <span class="count">3</span>
-          </a>
-
-
-          <a href="/users" class="nav-section users">
-              <span class="ss-user icon"></span>
-              <span class="main">Users</span>
-              <span class="count">0</span>
-          </a>
-
-
-          <a href="/phones" class="nav-section devices">
-              <span class="ss-phone icon"></span>
-              <span class="main">Devices</span>
-              <span class="count">0</span>
-          </a>
-
-
-
-          <a href="/groups" class="nav-section groups">
-              <span class="ss-users icon"></span>
-              <span class="main">Groups</span>
-              <span class="count">0</span>
-          </a>
-
-
-
-
-          <a href="/admins" class="nav-section administrators">
-              <span class="ss-briefcase icon"></span>
-              <span class="main">Administrators</span>
-              <span class="count">1</span>
-          </a>
-
-
-
-          <a href="/logs" class="nav-section logs">
-              <span class="ss-notebook icon"></span>
-              <span class="main">Logs</span>
-          </a>
-
-
-
-          <a href="/settings" class="nav-section settings ">
-              <span class="ss-settings icon"></span>
-              <span class="main">Settings</span>
-          </a>
-
-
-          <a href="/billing" class="nav-section billing last">
-              <span class="ss-creditcard icon"></span>
-              <span class="main">Billing</span>
-          </a>
-
-          <div class="section">
-              <h4>Documentation</h4>
-              <ul>
-                  <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/getting_started" target="_blank">Getting Started</a></li>
-                  <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/administration" target="_blank">Administration</a></li>
-
-                  <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/telephony_credits" target="_blank">Telephony Credits</a></li>
-
-              </ul>
-          </div>
-
-          <div class="section">
-              <h4>For Users</h4>
-              <p><a href="http://guide.duosecurity.com" target="_blank">Duo User Guide</a></p>
-          </div>
-
-          <div class="section">
-              <h4>Support</h4>
-
-
-              <p>Get help via <a href="mailto:support&#x40;duosecurity.com">email</a> or phone (1-855-386-2884).</p>
-
-
-          </div>
-
-          <div class="section">
-              <h4>Feedback?</h4>
-              <p class="pre-feedback"><a href="#" class="show_feedback">Let us know</a> how we can make this page better.</p>
-              <form action="/feedback" name="feedback" id="feedback">
-                  <input type="hidden" name="_xsrf" value="c994937228b0452891c6453e3be1b906"/>
-                  <input type="hidden" name="email" value="junemp&#x40;gmail.com">
-                  <input type="hidden" name="page" value="admin-953b8d24.duosecurity.com&#x2f;">
-                  <input type="hidden" name="customer" value="Koro">
-                  <textarea class="text" name="feedback_message"></textarea>
-<span class="do-button has-input save-changes">
-<input type="submit" name="submit" value="Submit">
-</span>
-              </form>
-              <p class="feedback-thanks">Thanks. We love feedback!</p>
-          </div>
-
-      </div> <!-- .inner -->
-  </div> <!-- #sidebar -->
-  <div id="main-content">
-      <div class="inner">
+  <div class="inner">
           <div id="flash">
 
           </div>
@@ -346,8 +362,10 @@ credits
           </div>
       </div> <!-- .inner -->
   </div> <!-- #main-content -->
-  </div> <!-- #content -->
-  </div> <!-- wrapper -->
+  </div> <!-- .row -->
+  </div> <!-- .container -->
+
+  <!--
   <div id="footer">
       <div class="inner">
           Account ID: 2503-7079-40
@@ -357,7 +375,7 @@ credits
 
       </div>
   </div>
-
+-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

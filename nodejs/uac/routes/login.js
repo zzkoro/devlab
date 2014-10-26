@@ -10,9 +10,11 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     var email = req.param('email');
     console.log('email:' + email);
-    var result = {'email':email};
 
-    res.render('login');
+    var session = req.session;
+    session.userInfo = {'email' : email};
+
+    res.redirect('/dashboard');
 });
 
 
