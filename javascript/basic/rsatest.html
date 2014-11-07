@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title></title>
+
+<script type="text/javascript" src="rsa.js"></script>
+
+<script type="text/javascript">
+    function encrypt() {
+        var plain = document.rsaForm.msg.value;
+
+        console.log('msg:' + plain);
+
+        var cipher = rsa.encrypt(plain);
+
+        console.log('cipher:' + cipher);
+
+        document.rsaForm.result.value = cipher;
+    }
+</script>
+</head>
+<body>
+
+<form name="rsaForm">
+    <input type="text" name="msg" value="" />
+    <input type="text" name="result" value="" />
+    <input type="button" value="암호화" onclick="javascript:encrypt(); return false;" />
+</form>
+
+
+</body>
+</html>
