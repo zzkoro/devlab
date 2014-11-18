@@ -1,0 +1,15 @@
+{
+    "app" :   {
+        "port" : 3000
+    },
+    "session" :  {
+        "secret" : "uac",
+        "age" : 600000
+    },
+    "redis" : {
+        "host" : "192.168.0.20",
+        "port" : 6379,
+        "database" : 0,
+        "ttl" : 3600
+    }
+}
