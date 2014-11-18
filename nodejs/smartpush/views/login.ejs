@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UAC Login</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel='stylesheet' href='/css/style.css' />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div id="contactbar">
+        <div class="content-width">
+        <div class="grid_12">
+        </div>
+        <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="container">
+
+    <div id="header">
+        <div class="content-width">
+          <div id="logo">
+              <h1>
+                  <a href="/">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           width="101.7px" height="32.8px" viewBox="0 0 101.7 32.8" enable-background="new 0 0 101.7 32.8" xml:space="preserve">
+<path class="logo-path" d="M50.8,11C50.8,11,50.8,11,50.8,11L50.8,11C50.8,11,50.8,11,50.8,11z"/>
+                          <path class="logo-path logo-opaque" d="M0,32.8h16.4c8.8,0,16-6.9,16.4-15.6H0V32.8z"/>
+                          <path class="logo-path" d="M16.4,0H0v15.6h32.8C32.4,6.9,25.2,0,16.4,0z"/>
+                          <path class="logo-path" d="M85.3,0c-8.8,0-16,6.9-16.4,15.6h32.8C101.3,6.9,94.1,0,85.3,0z"/>
+                          <path class="logo-path logo-opaque" d="M85.3,32.8c8.8,0,16-6.9,16.4-15.6H68.9C69.4,25.9,76.5,32.8,85.3,32.8z"/>
+                          <path class="logo-path" d="M34.5,0v16.4c0,8.8,6.9,16,15.6,16.4V0H34.5z"/>
+                          <polygon class="logo-path logo-opaque" points="51.7,0 51.7,32.8 67.3,32.8 67.3,16.4 67.3,0 "/>
+</svg>
+                      <span>Duo</span>
+                  </a>
+              </h1>
+          </div>
+
+          <div id="customer-name">
+              <h2 class="ss-navigateright">Log in</h2>
+          </div>
+
+          <div id="create-account" class="create-account-text">
+              New to Duo?
+              <a href="https://www.duosecurity.com/pricing">Create an account</a>
+          </div>
+
+    </div> <!-- .container_12 -->
+    </div> <!-- #header -->
+        <form class="form-signin" role="form" action="" method="post" autocomplete="off">
+            <div class="form-signin-heading">1.Enter your email address and password</div>
+            <input type="email" class="form-control" placeholder="Email address" name="email" required autofocus>
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a href="/forgot" class="forgot-password">Forgot password?</a>
+            <div/>
+            <div class="form-signin-heading">2.We'll text or call you yo complete your login</div>
+        </form>
+    </div> <!-- .container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

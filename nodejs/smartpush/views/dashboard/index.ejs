@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UAC Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel='stylesheet' href='/css/style.css' />
+
+    <link rel='stylesheet' href='/css/dashboard.css' />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+  </head>
+  <body>
+
+
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+          <li>
+              <a href="/" class="nav-section first dashboard current">
+                  <span class="ss-desktop icon"></span>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/integrations" class="nav-section integrations">
+                  <span class="ss-lock icon"></span>
+                  <span>Integrations</span>
+                  <span class="count">3</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/users" class="nav-section users">
+                  <span class="ss-user icon"></span>
+                  <span>Users</span>
+                  <span class="count">0</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/phones" class="nav-section devices">
+                  <span class="ss-phone icon"></span>
+                  <span>Devices</span>
+                  <span class="count">0</span>
+              </a>
+          </li>
+
+
+          <li>
+              <a href="/groups" class="nav-section groups">
+                  <span class="ss-users icon"></span>
+                  <span>Groups</span>
+                  <span class="count">0</span>
+              </a>
+          </li>
+
+
+          <li>
+              <a href="/admins" class="nav-section administrators">
+                  <span class="ss-briefcase icon"></span>
+                  <span>Administrators</span>
+                  <span class="count">1</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/logs" class="nav-section logs">
+                  <span class="ss-notebook icon"></span>
+                  <span>Logs</span>
+              </a>
+          </li>
+
+          <li>
+          <a href="/settings" class="nav-section settings ">
+                  <span class="ss-settings icon"></span>
+                  <span>Settings</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/billing" class="nav-section billing last">
+                  <span class="ss-creditcard icon"></span>
+                  <span>Billing</span>
+              </a>
+          </li>
+
+      </ul>
+      <ul class="nav nav-sidebar">
+          <h4>Documentation</h4>
+          <ul>
+              <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/getting_started" target="_blank">Getting Started</a></li>
+              <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/administration" target="_blank">Administration</a></li>
+
+              <li><a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/telephony_credits" target="_blank">Telephony Credits</a></li>
+
+          </ul>
+      </ul>
+
+      <ul class="nav nav-sidebar">
+          <h4>For Users</h4>
+          <p><a href="http://guide.duosecurity.com" target="_blank">Duo User Guide</a></p>
+      </ul>
+
+      <ul class="nav nav-sidebar">
+          <h4>Support</h4>s
+
+
+          <p>Get help via <a href="mailto:support&#x40;duosecurity.com">email</a> or phone (1-855-386-2884).</p>
+
+
+      </ul>
+
+      <ul class="nav nav-sidebar">
+          <h4>Feedback?</h4>
+          <p class="pre-feedback"><a href="#" class="show_feedback">Let us know</a> how we can make this page better.</p>
+          <form action="/feedback" name="feedback" id="feedback">
+              <input type="hidden" name="_xsrf" value="c994937228b0452891c6453e3be1b906"/>
+              <input type="hidden" name="email" value="junemp&#x40;gmail.com">
+              <input type="hidden" name="page" value="admin-953b8d24.duosecurity.com&#x2f;">
+              <input type="hidden" name="customer" value="Koro">
+              <textarea class="text" name="feedback_message"></textarea>
+<span class="do-button has-input save-changes">
+<input type="submit" name="submit" value="Submit">
+</span>
+          </form>
+          <p class="feedback-thanks">Thanks. We love feedback!</p>
+      </ul>
+
+
+
+
+
+  </div> <!-- .sidebar -->
+
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+  <div id="contactbar">
+      <div class="content-width">
+          <div class="grid_12">
+
+              <div class="item log_out_link">
+                  <a href="/logout" class="action">Log Out</a>
+              </div>
+              <div class="item logged_in_as">
+                  Logged in as
+                  <a href="/admins/DEIAGU2GCAF8C68BEM9X">
+                      <strong>junemp&#x40;gmail.com</strong>
+                  </a>
+              </div>
+              <div class="item switch_customer">
+
+              </div>
+
+          </div>
+      </div> <!-- content-width -->
+  </div>
+
+  <div id="header">
+      <div class="content-width">
+          <div id="logo">
+              <h1>
+                  <a href="/">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           width="101.7px" height="32.8px" viewBox="0 0 101.7 32.8"
+                           enable-background="new 0 0 101.7 32.8" xml:space="preserve">
+        <path class="logo-path" d="M50.8,11C50.8,11,50.8,11,50.8,11L50.8,11C50.8,11,50.8,11,50.8,11z"/>
+                          <path class="logo-path logo-opaque" d="M0,32.8h16.4c8.8,0,16-6.9,16.4-15.6H0V32.8z"/>
+                          <path class="logo-path" d="M16.4,0H0v15.6h32.8C32.4,6.9,25.2,0,16.4,0z"/>
+                          <path class="logo-path" d="M85.3,0c-8.8,0-16,6.9-16.4,15.6h32.8C101.3,6.9,94.1,0,85.3,0z"/>
+                          <path class="logo-path logo-opaque"
+                                d="M85.3,32.8c8.8,0,16-6.9,16.4-15.6H68.9C69.4,25.9,76.5,32.8,85.3,32.8z"/>
+                          <path class="logo-path" d="M34.5,0v16.4c0,8.8,6.9,16,15.6,16.4V0H34.5z"/>
+                          <polygon class="logo-path logo-opaque" points="51.7,0 51.7,32.8 67.3,32.8 67.3,16.4 67.3,0 "/>
+        </svg>
+                      <span>Duo</span>
+                  </a>
+              </h1>
+          </div>
+
+
+
+
+
+          <div id="customer-name">
+              <h2 class="ss-navigateright"><a href="/"><%= email %></a></h2>
+          </div>
+          <div class="wonka-bar">
+              <input type="text" placeholder="Search for users, integrations, or devices">
+          </div>
+
+          <div class="create-account-text">
+              <p>Your <b>Enterprise</b> trial ends in 27 days &middot; <a href="/billing"><u>Learn more</u></a></p>
+          </div>
+
+
+      </div> <!-- .content-width -->
+  </div> <!-- #header -->
+
+
+  <div class="inner">
+          <div id="flash">
+
+          </div>
+
+          <div id="main-content-title">
+
+              <div class="breadcrumbs">
+                  <a href="/">Koro</a>
+                  <span class="sep">&#9654;</span>
+                  Dashboard
+              </div>
+              <h3 class="title">Dashboard</h3>
+
+          </div>
+          <div id="main-content-wrapper">
+              <div id="main-content-body">
+
+
+
+                  <h4>Summary</h4>
+                  <div class="at-a-glance">
+                      <div class="number-link">
+                          <a href="/integrations">
+                              <span class="what">Integrations</span>
+                              <span class="number">3</span>
+                          </a>
+                      </div>
+                      <div class="number-link">
+                          <a href="/users">
+                              <span class="what">Users</span>
+                              <span class="number">0</span>
+                          </a>
+                      </div>
+                      <div class="number-link">
+                          <a href="/phones">
+                              <span class="what">Devices</span>
+                              <span class="number">0</span>
+                          </a>
+                      </div>
+                      <div class="number-link">
+                          <a href="/admins">
+                              <span class="what">Administrators</span>
+                              <span class="number">1</span>
+                          </a>
+                      </div>
+                  </div>
+
+                  <h4>Telephony Credits</h4>
+                  <h5>Total</h5>
+                  <p class="credits-line">
+<span class="num-credits">
+500
+</span>
+<span class="word-credits">
+
+credits
+
+</span>
+                  </p>
+                  <p>Telephony credits are used when your users authenticate via phone call or text message. <a href="/billing/credits">Full details</a></p>
+
+                  <h4>World View <small>Last 24 hours</small></h4>
+                  <div id="map">
+                      <div class="empty">No activity to show</div>
+                  </div>
+                  <h4>
+                      <a href="/logs" class="right"><small>Full authentication log &#8594;</small></a>
+                      Authentication Log
+                      <small>Last 10 attempts</small>
+                  </h4>
+                  <div class="simple_table">
+                      <table id="dashboard-authlog" class="display">
+                          <thead>
+                          <tr>
+
+                              <th class="timestamp">When</th>
+                              <th class="username">User</th>
+                              <th class="integration">Integration</th>
+                              <th class="factor">Factor</th>
+                              <th class="result">Result</th>
+                              <th class="ip_address">IP Address</th>
+                              <th class="location">Location</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td colspan="6" class="dataTables_empty">Loading...</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+
+              </div>
+
+
+              <div id="update-feed">
+                  <div class="feed-section">
+                      <h2>What's New?</h2>
+                      <b class="date">UPDATED OCT 21, 2014</b>
+                  </div>
+
+                  <div class="feed-section">
+                      <h4>FIDO Universal Second Factor (U2F) Devices (Labs Feature)</h4>
+                      <p>One-tap for hardware tokens! Be one of the first to try the new, phishing-proof standard from the FIDO Alliance.</p>
+                      <a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com/u2f" target="_blank">Watch video</a>
+                      <a href="/settings/labs#u2f-management?ref=feed">Enable</a>
+                  </div>
+
+
+                  <div class="feed-section">
+                      <h4>Mobile Controls (Labs Feature)</h4>
+                      <p>Try the first Labs Feature. Only allow specific platforms (like iOS or Android) to use Duo Mobile authentication methods.</p>
+                      <a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com/features/labs?ref=feed" target="_blank">Learn more</a>
+                      <a href="/settings/labs?ref=feed">Enable</a>
+                  </div>
+
+                  <div class="feed-section">
+                      <h4>Search Everything</h4>
+                      <p>Jump to any user, phone, token or integration in seconds using the new search tool.</p>
+                      <a class="search-link" href="#">Try it</a>
+                  </div>
+                  <div class="feed-section">
+                      <h4>Lockout and Fraud Alerts</h4>
+                      <p>Adjust email notifications, permitted attempts before user lockout, and lockout duration.</p>
+                      <a href="/settings?ref=feed#lockout">Set preferences</a>
+                  </div>
+
+                  <div class="feed-section">
+                      <h4>Self-Service Portal</h4>
+                      <p>Let users securely add and remove their own phones without calling your IT dept.</p>
+                      <a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;blog/empower-users-and-save-time-with-self-service-portal?ref=feed" target="_blank">Learn more</a>
+                  </div>
+
+
+                  <div class="feed-section">
+                      <h4>Active Directory Sync</h4>
+                      <p>Using AD? You can now synchronize users, groups, phones and more with Duo.</p>
+                      <a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;docs/syncing_users_from_active_directory?ref=feed" target="_blank">Learn more</a>
+                      <a href="/users/directorysync?ref=feed">Set up AD Sync</a>
+                  </div>
+
+
+
+              </div>
+
+
+          </div>
+      </div> <!-- .inner -->
+  </div> <!-- #main-content -->
+  </div> <!-- .row -->
+  </div> <!-- .container -->
+
+  <!--
+  <div id="footer">
+      <div class="inner">
+          Account ID: 2503-7079-40
+
+          &middot;
+          &copy; 2014 Duo Security. All rights reserved. <a href="https&#x3a;&#x2f;&#x2f;www.duosecurity.com&#x2f;terms" target="_blank">Terms of service</a>
+
+      </div>
+  </div>
+-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
