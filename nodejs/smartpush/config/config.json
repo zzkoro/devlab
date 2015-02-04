@@ -1,9 +1,10 @@
 {
     "app" :   {
+        "home" : "d:\\devlab\\nodejs\\smartpush",
         "port" : 3000
     },
     "session" :  {
-        "secret" : "uac",
+        "secret" : "smartpush",
         "age" : 600000
     },
     "redis" : {
@@ -11,5 +12,9 @@
         "port" : 6379,
         "database" : 0,
         "ttl" : 3600
+    },
+    "mongodb" : {
+        "addr" : "1.234.6.147:27000",
+        "dbname" : "smartpush"
     }
 }

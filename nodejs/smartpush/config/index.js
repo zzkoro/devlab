@@ -3,7 +3,7 @@ var session = require('express-session');
 var redis = require('redis');
 var RedisStore = require('connect-redis')(session);
 var url = require('url');
-var utils = require('../utils');
+var utils = require('../util/utils');
 var env = require('./env');
 
 var config = {};

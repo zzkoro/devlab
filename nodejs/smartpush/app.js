@@ -11,12 +11,33 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var dashboardRouter = require('./routes/dashboard');
 var pushRouter = require('./routes/push');
+var mongoDb = require('./dao/mongoConfig');
 
 var app = express();
 
-// Configuration
+/**
+ * 1.Configuration
+ */
 require('./config')(app);
 var config = app.get('config');
+
+/**
+ * 2. Logger 세팅
+ */
+require('./util/logging')({port: config.app.port, path: config.app.home});
+
+/**
+ * 3. Mongo DB Connect
+ */
+mongoDb.config(config.mongodb.addr, config.mongodb.dbname, undefined,
+  function(err, message) {
+      if (!err) {
+          console.info('MongoDB Connected!!');
+      } else {
+          throw new Error(message);
+      }
+  }
+);
 
 
 // view engine setup

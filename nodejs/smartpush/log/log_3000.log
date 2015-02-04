@@ -1,0 +1,16 @@
+{"level":"info","message":"www.js:5 Express server listening on port 3000","timestamp":"2014-11-19T04:04:05.167Z"}
+{"level":"info","message":"www.js:5 Express server listening on port 3000","timestamp":"2014-11-19T04:40:18.032Z"}
+{"level":"info","message":"www.js:5 Express server listening on port 3000","timestamp":"2014-11-19T04:41:45.541Z"}
+{"level":"info","message":"www.js:5 Express server listening on port 3000","timestamp":"2014-11-19 14-13-13"}
+{"level":"info","message":"www.js:5 Express server listening on port 3000","timestamp":"2014-11-19 14:13:40"}
+{"level":"info","message":"www.js:4 Express server listening on port 3000","timestamp":"2014-11-19 15:16:14"}
+{"level":"info","message":"mongoConfig.js:20 Mongodb error encountered [Error: failed to connect to [localhost:27017]]","timestamp":"2014-11-19 15:16:15"}
+{"level":"info","message":"www.js:4 Express server listening on port 3000","timestamp":"2014-11-19 15:39:8"}
+{"level":"info","message":"app.js:35 MongoDB Connected!!","timestamp":"2014-11-19 15:39:8"}
+{"level":"info","message":"www.js:4 Express server listening on port 3000","timestamp":"2014-11-19 21:44:52"}
+{"level":"info","message":"app.js:35 MongoDB Connected!!","timestamp":"2014-11-19 21:44:52"}
+{"level":"info","message":"push.js:47 token:1234","timestamp":"2014-11-19 21:48:17"}
+{"level":"info","message":"push.js:48 msg:안녕하세요","timestamp":"2014-11-19 21:48:17"}
+{"level":"info","message":"push.js:13 spId:001","timestamp":"2014-11-19 21:48:47"}
+{"level":"info","message":"push.js:30 providerInfo:[object Object]","timestamp":"2014-11-19 21:51:4"}
+{"level":"info","message":"push.js:13 spId:0001","timestamp":"2014-11-19 21:52:52"}
