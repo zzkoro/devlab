@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
+/**
+ * 
+ * @author asus
+ *
+ */
 public class DemoApplication {
 
     public static void main(String[] args) {
