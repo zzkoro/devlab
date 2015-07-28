@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 
  * @author asus
- * @date
  *
  */
 public class DemoApplication {
