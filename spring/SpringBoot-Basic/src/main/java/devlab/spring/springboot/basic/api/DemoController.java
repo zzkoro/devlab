@@ -1,21 +1,18 @@
 package devlab.spring.springboot.basic.api;
 
-import java.util.Collection;
+import javax.validation.Valid;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import devlab.spring.springboot.basic.vo.DemoRequestVO;
 
 @Configuration
 @ComponentScan
@@ -25,84 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author asus
  *
  */
+@RestController
 public class DemoController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoController.class, args);
-    }
-}
-
-@Component
-class BookingCommandLineRunner implements CommandLineRunner {
-
-	/* (non-Javadoc)
-	 * @see org.springframework.boot.CommandLineRunner#run(java.lang.String[])
-	 */
-	@Override
-	public void run(String... arg0) throws Exception {
+	@RequestMapping("/getName")
+	DemoRequestVO getName(@RequestBody @Valid DemoRequestVO req) {
 		
-		System.out.println("CommandLineRunner");
-
-		for (Booking b : this.bookingRepository.findAll()) {
-			System.out.println(b.toString());
-		}
+		org.springframework.web.bind.MethodArgumentNotValidException me;
 		
+		
+		return req;
 	}
-	
-	@Autowired BookingRepository bookingRepository;
-	
 }
 
-
-interface BookingRepository extends JpaRepository<Booking, Long> {
-	Collection<Booking> findByBookingName(String bookingName);
-}
-
-@RestController
-class BookingRestController {
-	
-	@RequestMapping("/bookings")
-	Collection<Booking> bookings() {
-		return this.bookingRepository.findAll();
-	}
-	
-	@Autowired BookingRepository bookingRepository;
-}
-
-@Entity
-class Booking {
-	@Id @GeneratedValue
-	private Long id;
-	private String bookingName;
-	
-	/**
-	 * @param bookingName
-	 */
-	public Booking(String bookingName) {
-		super();
-		this.bookingName = bookingName;
-	}
-
-	/**
-	 * 
-	 */
-	public Booking() {
-	}
-
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-
-	/**
-	 * @return the bookingName
-	 */
-	public String getBookingName() {
-		return bookingName;
-	}
-	
-	
-	
-}
