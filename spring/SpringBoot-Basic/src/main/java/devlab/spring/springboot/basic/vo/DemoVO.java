@@ -17,6 +17,8 @@ public class DemoVO {
 	
 	@NotEmpty
 	String name;
+
+	String age;
 	
 	public String getId() {
 		return id;
@@ -29,6 +31,14 @@ public class DemoVO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
 	}
 	
 	
