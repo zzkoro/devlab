@@ -16,6 +16,8 @@ public class DemoRequestVO {
 	
 	@NotEmpty
 	String name;
+
+	String commcType;
 	
 	public String getId() {
 		return id;
@@ -29,7 +31,14 @@ public class DemoRequestVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public String getCommcType() {
+		return commcType;
+	}
+
+	public void setCommcType(String commcType) {
+		this.commcType = commcType;
+	}
 	
 
 }
