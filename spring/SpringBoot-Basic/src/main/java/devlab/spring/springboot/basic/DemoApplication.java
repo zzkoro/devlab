@@ -6,10 +6,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -30,6 +38,31 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
+
+
+	@Bean
+	SimpleMessageListenerContainer container(ConnectionFactory connectionFactory, MessageListenerAdapter listenerAdapter) {
+		SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+		container.setConnectionFactory(connectionFactory);
+		container.setQueueNames("testQueue");
+		container.setMessageListener(listenerAdapter);
+		container.setMaxConcurrentConsumers(1);
+		container.setReceiveTimeout(3000L);
+		container.setReceiveTimeout(3000L);
+		return container;
+
+	}
+
+	@Bean
+	Queue queue() {
+		return new Queue("testQueue", false);
+	}
+
+	@Bean
+	MessageListenerAdapter listenerAdapter(Receiver receiver) {
+		return new MessageListenerAdapter(receiver, "receiveMessage");
+	}
+
 }
 
 @Component
@@ -102,7 +135,14 @@ class Booking {
 	public String getBookingName() {
 		return bookingName;
 	}
-	
-	
-	
+
 }
+
+@Component
+class Receiver{
+	public void receiveMessage(Object message) {
+		System.out.println("message received:" + message);
+	}
+}
+
+
