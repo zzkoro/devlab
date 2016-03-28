@@ -33,7 +33,7 @@ public class DemoController {
 
 	@RequestMapping("/getName")
 	DemoRequestVO getName(@RequestBody @Valid DemoRequestVO req) {
-
+		System.out.println("안녕하세요!!");
 		
 		return req;
 	}
