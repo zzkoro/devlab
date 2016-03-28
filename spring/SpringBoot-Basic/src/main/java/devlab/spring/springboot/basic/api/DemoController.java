@@ -3,6 +3,7 @@ package devlab.spring.springboot.basic.api;
 import devlab.spring.springboot.basic.code.CommcType;
 import devlab.spring.springboot.basic.sms.SmsService;
 import devlab.spring.springboot.basic.vo.DemoRequestVO;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -31,6 +32,9 @@ public class DemoController {
 	@Autowired @Qualifier("sktSmsService")
 	private SmsService sktSmsService;
 
+	@Autowired
+	private RabbitTemplate rabbitTemplate;
+
 	@RequestMapping("/getName")
 	DemoRequestVO getName(@RequestBody @Valid DemoRequestVO req) {
 		System.out.println("안녕하세요!!");
@@ -47,6 +51,18 @@ public class DemoController {
 
 		return req;
 	}
+
+
+	@RequestMapping("/sendQ")
+	DemoRequestVO sendQ(@RequestBody DemoRequestVO req) {
+
+		rabbitTemplate.convertAndSend(req);
+
+		System.out.println("send Q");
+
+		return req;
+	}
+
 
 	private SmsService getSmsService(String commcName) {
 		CommcType commcType = CommcType.valueOf(commcName);
